@@ -8,4 +8,12 @@ module.exports = {
   },
   mode: "development",
   watch: true,
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ["css-loader"],
+      },
+    ],
+  },
 };
