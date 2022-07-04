@@ -1,3 +1,4 @@
+const { watch } = require("fs");
 const path = require("path");
 
 const postCSSPlugins = [
@@ -14,13 +15,18 @@ module.exports = {
     path: path.resolve(__dirname, "app"),
   },
   devServer: {
+    // contentBase: path.join(__dirname, "app"),
+    watchFiles: ["./app/**/*.html"],
     static: {
       directory: path.join(__dirname, "app"),
-    },
+      watch: false,
+    }, // found this solution
     hot: true,
     port: 3000,
+    host: "0.0.0.0",
   },
   mode: "development",
+  // watch: true,
   module: {
     rules: [
       {
