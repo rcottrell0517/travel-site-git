@@ -23,7 +23,7 @@ module.exports = {
     }, // found this solution
     hot: true,
     port: 3000,
-    host: "0.0.0.0",
+    host: "0.0.0.0", // devices on same network can access site
   },
   mode: "development",
   // watch: true,
